@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>clickbable prototype</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+
+	<section>
+		
+
+		<div class="g-row">
+			
+				<a href="index.html"><img src="img/banner.png"></a>
+			</div>
+		
+				
+			</div>
+		</div>
+
+
+<input type="text" name="search" placeholder="Search..">
+<div class="container">
+<div class="bigNav">
+
+	
+
+
+  <a href="index.html">About</a>
+  <a href="map.html">Map</a>
+  <a href="bot.html">Bot</a>
+
+     
+    </div>
+  </div> 
+ 
+</div>
+</div>
+
+
+
+<div class= "paper">
+	<section id = "paper">
+		
+<div class="map">
+	<section id="map">
+	<div id="map"></div>
+	   <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 2,
+          center: new google.maps.LatLng(2.8,-187.3),
+          mapTypeId: 'terrain'
+        });
+
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script.src = 'https://api.instagram.com/v1/tags/starspotting/media/recent?access_token=6217406642.348eb7c.bc9a06b20fae4fc1b2699141fc64f926&callback=callbackFunction';
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }
+
+      // Loop through the results array and place a marker for each
+      // set of coordinates.
+      window.callbackFunction = function(results) {
+       for (var i = 0; i < results.data.length; i++) {
+          var coords = results.data[i].location;
+          var long = results.data[i].location.longitude;
+          var lat = results.data[i].location.latitude;
+
+          var latLng = new google.maps.LatLng(lat,long);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBUD9m8J5xaqq_Xb_DI8BByA4RkfALu_o&callback=initMap">
+    </script>
+
+	</section>
+		<section id="meetTheTeam">
+	<p> Find your favorite celebrity on the map - based on their last social media location!</p>
+	
+	
+	</section>
+</div>
+</div>
+</section>
+
+
+
+	
+	
+</section></body>
+
+<footer><p>PeopleZooINC</p></footer>
+</html>

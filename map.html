@@ -50,20 +50,8 @@
 <div class="map">
 	<section id="map">
 	<div id="map"></div>
-	   <script>
-      function initMap() {
-        var chernobyl = {lat: 51.389762, lng: 30.098803};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: chernobyl
-        });
-        var marker = new google.maps.Marker({
-          position: chernobyl,
-          map: map
-        });
-      }
-    </script>
-     <script async defer
+	   <script src="js/map.js"></script>
+    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBUD9m8J5xaqq_Xb_DI8BByA4RkfALu_o&callback=initMap">
     </script>
 
@@ -81,7 +69,11 @@
 
 	
 	
-</section></body>
+</section>
+<script type="text/javascript">
+	console.log('test');
+</script>
+</body>
 
 <footer><p>PeopleZooINC</p></footer>
 </html>
